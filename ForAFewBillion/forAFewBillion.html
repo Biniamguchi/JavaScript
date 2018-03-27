@@ -3,14 +3,28 @@
 <head>
     <title>For A Few Billion</title>
     <script type="text/javascript">
-        var penny = 0.01;
-        for (var num = 1; num <= 30; num += 1) 
-        {
-          penny *= 2;
+        var earnings = 0.01;
+
+        var day            = 0;
+        var daysTilTenThou = 0;
+        var daysTilOneBil  = 0;
+        var daysTilInf     = 0;
+
+        while(earnings != Infinity){
+            earnings *= 2;
+
+            if(daysTilOneBil == 30){
+                console.log("earnings after 30 days: ",earnings);
+            }
+
+            if(earnings < 10000){daysTilTenThou++;}
+            if(earnings < 1000000000){daysTilOneBil++;}
+            daysTilInf++;
         }
-        {
-          console.log(penny);
-        }
+        console.log("Days until $10,000: ",daysTilTenThou);
+        console.log("Days until 1Bil: ",daysTilBil);
+        console.log("Days until Infinite Money:",daysTilInf);
+        
     </script>
 </head>
 <body>
